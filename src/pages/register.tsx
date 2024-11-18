@@ -18,7 +18,7 @@ function RegisterPage() {
     const password = formData.get("password") as string;
 
     try {
-      const res = await apiRequest.post("/auth/register", {
+      await apiRequest.post("/auth/register", {
         username,
         email,
         password,
@@ -35,7 +35,7 @@ function RegisterPage() {
   return (
     <div className="flex h-full">
       <div className="flex h-full w-3/5 items-center justify-center">
-        <form className="flex flex-col w-3/5 gap-5" onSubmit={handleSubmit}>
+        <form className="flex w-3/5 flex-col gap-5" onSubmit={handleSubmit}>
           <h1>Create an Account</h1>
           <input
             name="username"
